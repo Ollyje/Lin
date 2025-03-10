@@ -5,8 +5,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-height: 100vh;
+min-height: 100vh; /* Ensure the gradient covers at least the full viewport height */
 background: linear-gradient(to bottom, #6085C3, #E4E4E5, #F2E0D0); /* Blue, Beige, White gradient */
+background-size: cover; /* Ensure the gradient fills the entire area */
+background-repeat: no-repeat; /* Prevent tiling of the gradient */
 }
 
 /* Style the canvas container */
@@ -64,7 +66,6 @@ opacity: 1; /* Fully opaque on hover */
 /* For screens smaller than 768px (e.g., tablets and phones) */
 @media (max-width: 768px) {
 body {
-  height: auto; /* Allow scrolling if needed on smaller screens */
   padding: 10px; /* Add padding around the content */
 }
 
