@@ -1,4 +1,4 @@
-/* Center the body content */
+/* Center the body content with a gradient background */
 body {
 margin: 0;
 display: flex;
@@ -6,7 +6,15 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background-color: #white; /* Dark background for contrast */
+background: linear-gradient(to bottom,  #6085C3, #E4E4E5, #F2E0D0); /* Blue, Beige, White gradient */
+}
+
+/* Style the canvas container */
+#canvas-container {
+display: flex;
+flex-direction: column;
+align-items: center; /* Center the button horizontally under the canvas */
+margin-top: 20px; /* Space between the canvas and other elements */
 }
 
 /* Style the button container */
@@ -20,20 +28,23 @@ font-size: 16px;
 padding: 10px 20px;
 cursor: pointer;
 border: none;
-background-color: #ff5722; /* Button color */
-color: white;
+background-color: #whitesmoke; /* Button color */
+color: black;
 border-radius: 5px; /* Rounded corners */
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
 }
 
 button:hover {
-background-color: #e64a19; /* Darker color on hover */
+background-color: #E4E4E5; /* Darker color on hover */
+transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
 /* Style the logo GIF */
 #logo {
 position: fixed; /* Fix the logo's position relative to the viewport */
-bottom: 20px; /* Adjusted distance from the bottom of the screen */
-left: 20px; /* Adjusted distance from the left of the screen */
+bottom: 20px; /* Distance from the bottom of the screen */
+left: 20px; /* Distance from the left of the screen */
 width: 120px; /* Adjusted size of the GIF */
 height: auto; /* Maintain aspect ratio */
 z-index: 10; /* Ensure it appears above other elements */

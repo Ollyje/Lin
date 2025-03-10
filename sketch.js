@@ -3,7 +3,10 @@ let offsets = []; // Offsets for animating the colors
 let speed = 0.01; // Speed of color movement
 
 function setup() {
-createCanvas(800, 800);
+let canvas = createCanvas(800, 800);
+
+// Set the canvas background to transparent
+canvas.style('background', 'transparent');
 
 // Generate initial random colors for the gradient
 generateRandomColors();
@@ -21,13 +24,24 @@ button.mousePressed(() => {
 }
 
 function draw() {
-background(255); // Dark background for contrast
+clear(); // Clear the canvas and make it transparent
 
 // Update colors based on Perlin noise for smooth animation
 let animatedColors = animateColors(colors, offsets);
 
-// Draw the gradient oval aura/orb
-drawGradientOrb(width / 2, height / 2, 500, 700, animatedColors);
+// Draw the gradient oval aura/orb with a white border
+drawGradientOrbWithBorder(width / 2, height / 2, 500, 700, animatedColors);
+}
+
+function drawGradientOrbWithBorder(x, y, w, h, gradientColors) {
+// Draw the white border
+noFill();
+stroke(228, 228, 229); // White color for the border
+strokeWeight(20); // Thickness of the border
+ellipse(x, y, w + 30, h + 30); // Slightly larger ellipse for the border
+
+// Draw the gradient oval
+drawGradientOrb(x, y, w, h, gradientColors);
 }
 
 function drawGradientOrb(x, y, w, h, gradientColors) {
