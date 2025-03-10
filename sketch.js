@@ -3,7 +3,8 @@ let offsets = []; // Offsets for animating the colors
 let speed = 0.01; // Speed of color movement
 
 function setup() {
-let canvas = createCanvas(800, 800);
+// Create a responsive canvas that takes up 90% of the viewport width and 70% of the viewport height
+let canvas = createCanvas(windowWidth * 0.9, windowHeight * 0.7);
 
 // Set the canvas background to transparent
 canvas.style('background', 'transparent');
@@ -30,7 +31,12 @@ clear(); // Clear the canvas and make it transparent
 let animatedColors = animateColors(colors, offsets);
 
 // Draw the gradient oval aura/orb with a white border
-drawGradientOrbWithBorder(width / 2, height / 2, 500, 700, animatedColors);
+drawGradientOrbWithBorder(width / 2, height / 2, width * 0.6, height * 0.8, animatedColors);
+}
+
+// Function to handle resizing the canvas when the window is resized
+function windowResized() {
+resizeCanvas(windowWidth * 0.9, windowHeight * 0.7); // Resize canvas dynamically
 }
 
 function drawGradientOrbWithBorder(x, y, w, h, gradientColors) {

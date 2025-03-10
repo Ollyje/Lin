@@ -6,7 +6,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background: linear-gradient(to bottom,  #6085C3, #E4E4E5, #F2E0D0); /* Blue, Beige, White gradient */
+background: linear-gradient(to bottom, #6085C3, #E4E4E5, #F2E0D0); /* Blue, Beige, White gradient */
 }
 
 /* Style the canvas container */
@@ -15,6 +15,8 @@ display: flex;
 flex-direction: column;
 align-items: center; /* Center the button horizontally under the canvas */
 margin-top: 20px; /* Space between the canvas and other elements */
+width: 100%; /* Full width for responsiveness */
+max-width: 800px; /* Limit maximum width for larger screens */
 }
 
 /* Style the button container */
@@ -28,7 +30,7 @@ font-size: 16px;
 padding: 10px 20px;
 cursor: pointer;
 border: none;
-background-color: #whitesmoke; /* Button color */
+background-color: whitesmoke; /* Button color */
 color: black;
 border-radius: 5px; /* Rounded corners */
 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
@@ -55,4 +57,44 @@ transition: transform 0.3s ease, opacity 0.3s ease; /* Add hover effects */
 #logo:hover {
 transform: scale(1.1); /* Slightly enlarge the GIF on hover */
 opacity: 1; /* Fully opaque on hover */
+}
+
+/* --- Responsive Styles for Mobile Devices --- */
+
+/* For screens smaller than 768px (e.g., tablets and phones) */
+@media (max-width: 768px) {
+body {
+  height: auto; /* Allow scrolling if needed on smaller screens */
+  padding: 10px; /* Add padding around the content */
+}
+
+#canvas-container {
+  width: 100%; /* Make the canvas container take full width */
+  max-width: none; /* Remove maximum width constraint */
+}
+
+button {
+  font-size: 14px; /* Reduce button font size for smaller screens */
+  padding: 8px 16px; /* Adjust padding for smaller buttons */
+}
+
+#logo {
+  width: 80px; /* Reduce the size of the logo */
+  bottom: 10px; /* Adjust position closer to the bottom */
+  left: 10px; /* Adjust position closer to the left */
+}
+}
+
+/* For screens smaller than 480px (e.g., small phones) */
+@media (max-width: 480px) {
+button {
+  font-size: 12px; /* Further reduce button font size */
+  padding: 6px 12px; /* Smaller padding for compact buttons */
+}
+
+#logo {
+  width: 60px; /* Further reduce the size of the logo */
+  bottom: 5px; /* Position closer to the bottom */
+  left: 5px; /* Position closer to the left */
+}
 }

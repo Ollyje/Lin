@@ -2,29 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive meta tag -->
 <title>Ling Gradient</title>
 <!-- Link to the external CSS file -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- The canvas will be automatically created by p5.js -->
-
-<!-- Include the p5.js library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
-
-<div class="gradient">
-<!-- Link to your custom sketch.js file -->
-<script src="sketch.js"></script>
-</div>
-
-<!-- Add a button directly in the HTML -->
-<div id="button-container">
-  <button id="generate-button">Reveal Your Aura</button>
+<!-- Container for the canvas and button -->
+<div id="canvas-container">
+  <!-- The canvas will be automatically created by p5.js -->
+  <div id="button-container">
+    <button id="generate-button">Reveal Your Aura</button>
+  </div>
 </div>
 
 <!-- Add the logo image -->
 <img src="images/logo.gif" alt="Logo Animation" id="logo">
 
+<!-- Include the p5.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+<!-- Link to your custom sketch.js file -->
+<script src="sketch.js"></script>
 </body>
 </html>
