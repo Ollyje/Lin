@@ -18,10 +18,29 @@ for (let i = 0; i < 4; i++) {
 }
 
 // Attach functionality to the button defined in HTML
-const button = select('#generate-button'); // Select the button by its ID
-button.mousePressed(() => {
-  generateNewOval(); // Call the function to generate a new oval
-});
+ const button = select('#generate-button');
+ button.mousePressed(() => {
+     console.log('Button clicked'); // Debug log
+     showLoadingOverlay();
+     setTimeout(() => {
+         hideLoadingOverlay();
+         generateNewOval();
+     }, 6000);
+ });
+}
+
+// Function to show the loading overlay
+function showLoadingOverlay() {
+ console.log('Showing overlay'); // Debug log
+ const loadingOverlay = document.getElementById('loading-overlay');
+ loadingOverlay.classList.add('show');
+}
+
+// Function to hide the loading overlay
+function hideLoadingOverlay() {
+ console.log('Hiding overlay'); // Debug log
+ const loadingOverlay = document.getElementById('loading-overlay');
+ loadingOverlay.classList.remove('show');
 }
 
 function draw() {
