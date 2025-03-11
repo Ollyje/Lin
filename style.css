@@ -80,8 +80,8 @@ transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
 }
 
 #loading-overlay img {
-width: 100vh; /* Default size of the loading GIF */
-height: 100vh; /* Maintain aspect ratio */
+width: 100%; /* Default size of the loading GIF */
+height:100%; /* Maintain aspect ratio */
 object-fit: cover; /* This ensures the image covers the area without distortion */
 }
 
