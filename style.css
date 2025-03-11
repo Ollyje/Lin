@@ -36,7 +36,7 @@ justify-content: center;
 button {
 font-size: clamp(14px, 4vw, 16px);
 font-family: "Perpetua Titling MT", serif;
-padding: clamp(8px, 2vw, 20px) clamp(15px, 4vw, 30px);
+padding: clamp(8px, 2vw, 10px) clamp(10px, 4vw, 20px);
 cursor: pointer;
 border: none;
 background-color: whitesmoke;
