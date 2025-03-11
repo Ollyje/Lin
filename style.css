@@ -19,7 +19,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-top: 20px;
-width: 90%; /* Changed from 100% to give some margin */
+width: 90%;
 max-width: 800px;
 padding: 0 10px;
 }
@@ -34,7 +34,7 @@ justify-content: center;
 
 /* Style the button */
 button {
-font-size: clamp(14px, 4vw, 16px); /* Responsive font size */
+font-size: clamp(14px, 4vw, 16px);
 font-family: "Perpetua Titling MT", serif;
 padding: clamp(8px, 2vw, 20px) clamp(15px, 4vw, 30px);
 cursor: pointer;
@@ -56,7 +56,7 @@ transform: scale(1.05);
 position: fixed;
 bottom: clamp(10px, 3vw, 20px);
 left: clamp(10px, 3vw, 20px);
-width: clamp(60px, 15vw, 120px); /* Responsive width */
+width: clamp(60px, 15vw, 120px);
 height: auto;
 z-index: 10;
 opacity: 0.9;
@@ -73,8 +73,8 @@ opacity: 1;
 position: fixed;
 top: 0;
 left: 0;
-width: 100vw;
-height: 100vh;
+width: 100%;
+height: 100%;
 background-color: rgba(0, 0, 0, 0.8);
 display: flex;
 justify-content: center;
@@ -86,10 +86,12 @@ transition: all 0.3s ease;
 }
 
 #loading-overlay img {
-height: 100vh;
-width: auto;
-object-fit: contain;
-max-width: 100vw;
+width: 100%;
+height: 100%;
+object-fit: cover; /* Changed to cover to fill the screen */
+position: absolute; /* Ensures full screen coverage */
+top: 0;
+left: 0;
 }
 
 /* Show the loading overlay */
@@ -115,6 +117,17 @@ button {
 #logo {
     width: 80px;
 }
+
+#loading-overlay {
+    width: 100vw;
+    height: 100vh;
+}
+
+#loading-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 }
 
 /* For mobile phones */
@@ -134,6 +147,17 @@ button {
     width: 60px;
     bottom: 5px;
     left: 5px;
+}
+
+#loading-overlay {
+    width: 100vw;
+    height: 100vh;
+}
+
+#loading-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 }
 
