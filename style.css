@@ -26,7 +26,7 @@ padding: 0 10px;
 
 /* Style the button container */
 #button-container {
-margin-top: 20px;
+margin-top: 0px;
 width: 100%;
 display: flex;
 justify-content: center;
@@ -106,12 +106,12 @@ opacity: 1;
 @media screen and (max-width: 768px) {
 #canvas-container {
     width: 95%;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 button {
     font-size: 14px;
-    padding: 8px 16px;
+    padding: 6px 10px;
 }
 
 #logo {
@@ -139,8 +139,8 @@ button {
 }
 
 button {
-    font-size: 12px;
-    padding: 6px 12px;
+    font-size: 8px;
+    padding: 4px 8px;
 }
 
 #logo {
@@ -180,7 +180,7 @@ button {
 }
 
 button {
-    padding: 5px 15px;
+    padding: 5px 10px;
 }
 
 #logo {
