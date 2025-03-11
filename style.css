@@ -97,7 +97,20 @@ opacity: 1;
 @media (max-width: 768px) {
 body {
   padding: 10px; /* Add padding around the content */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+ #loading-overlay img {
+     width: 100vw;
+     height: 100vh;
+     object-fit: cover;
+ }
+}
+
 
 #canvas-container {
   width: 100%; /* Make the canvas container take full width */
