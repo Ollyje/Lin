@@ -5,25 +5,26 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-min-height: 100vh; /* Ensure the gradient covers at least the full viewport height */
-background: linear-gradient(to bottom, #6085C3, #E4E4E5, #F2E0D0); /* Blue, Beige, White gradient */
-background-size: cover; /* Ensure the gradient fills the entire area */
-background-repeat: no-repeat; /* Prevent tiling of the gradient */
+min-height: 100vh;
+background: linear-gradient(to bottom, #6085C3, #E4E4E5, #F2E0D0);
+background-size: cover;
+background-repeat: no-repeat;
+overflow: hidden; /* Prevent scrolling when overlay is shown */
 }
 
 /* Style the canvas container */
 #canvas-container {
 display: flex;
 flex-direction: column;
-align-items: center; /* Center the button horizontally under the canvas */
-margin-top: 20px; /* Space between the canvas and other elements */
-width: 100%; /* Full width for responsiveness */
-max-width: 800px; /* Limit maximum width for larger screens */
+align-items: center;
+margin-top: 20px;
+width: 100%;
+max-width: 800px;
 }
 
 /* Style the button container */
 #button-container {
-margin-top: 20px; /* Space between the canvas and the button */
+margin-top: 20px;
 }
 
 /* Style the button */
@@ -33,33 +34,33 @@ font-family: "Perpetua Titling MT", serif;
 padding: 10px 20px;
 cursor: pointer;
 border: none;
-background-color: whitesmoke; /* Button color */
+background-color: whitesmoke;
 color: black;
-border-radius: 5px; /* Rounded corners */
-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+border-radius: 5px;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-background-color: #E4E4E5; /* Darker color on hover */
-transform: scale(1.05); /* Slightly enlarge the button on hover */
+background-color: #E4E4E5;
+transform: scale(1.05);
 }
 
 /* Style the logo GIF */
 #logo {
-position: fixed; /* Fix the logo's position relative to the viewport */
-bottom: 20px; /* Distance from the bottom of the screen */
-left: 20px; /* Distance from the left of the screen */
-width: 120px; /* Adjusted size of the GIF */
-height: auto; /* Maintain aspect ratio */
-z-index: 10; /* Ensure it appears above other elements */
-opacity: 0.9; /* Slight transparency for a smoother look */
-transition: transform 0.3s ease, opacity 0.3s ease; /* Add hover effects */
+position: fixed;
+bottom: 20px;
+left: 20px;
+width: 120px;
+height: auto;
+z-index: 10;
+opacity: 0.9;
+transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 #logo:hover {
-transform: scale(1.1); /* Slightly enlarge the GIF on hover */
-opacity: 1; /* Fully opaque on hover */
+transform: scale(1.1);
+opacity: 1;
 }
 
 /* Loading overlay styles */
@@ -67,22 +68,24 @@ opacity: 1; /* Fully opaque on hover */
 position: fixed;
 top: 0;
 left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.8);
 display: flex;
 justify-content: center;
 align-items: center;
-z-index: 9999; /* Ensure it appears above everything else */
-visibility: hidden; /* Hidden by default */
-opacity: 0; /* Transparent by default */
-transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+z-index: 9999;
+visibility: hidden;
+opacity: 0;
+transition: all 0.3s ease;
 }
 
 #loading-overlay img {
-width: 100%; /* Default size of the loading GIF */
-height:100%; /* Maintain aspect ratio */
-object-fit: cover; /* This ensures the image covers the area without distortion */
+width: 100%;
+height: 100%;
+object-fit: contain; /* Changed from cover to contain */
+max-width: 100vw;
+max-height: 100vh;
 }
 
 /* Show the loading overlay */
@@ -93,61 +96,60 @@ opacity: 1;
 
 /* --- Responsive Styles for Mobile Devices --- */
 
-/* For screens smaller than 768px (e.g., tablets and phones) */
+/* For screens smaller than 768px (tablets) */
 @media (max-width: 768px) {
 body {
-  padding: 10px; /* Add padding around the content */
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+    padding: 10px;
 }
-
-/* For screens smaller than 480px */
-@media (max-width: 480px) {
- #loading-overlay img {
-     width: 100vw;
-     height: 100vh;
-     object-fit: cover;
- }
-}
-
 
 #canvas-container {
-  width: 100%; /* Make the canvas container take full width */
-  max-width: none; /* Remove maximum width constraint */
+    width: 100%;
+    max-width: none;
 }
 
 button {
-  font-size: 14px; /* Reduce button font size for smaller screens */
-  padding: 8px 16px; /* Adjust padding for smaller buttons */
-  font-family: "Perpetua Titling MT", serif;
+    font-size: 14px;
+    padding: 8px 16px;
 }
 
 #logo {
-  width: 80px; /* Reduce the size of the logo */
-  bottom: 10px; /* Adjust position closer to the bottom */
-  left: 10px; /* Adjust position closer to the left */
+    width: 80px;
+    bottom: 10px;
+    left: 10px;
 }
 
 #loading-overlay img {
-  width: 120px; /* Reduce the size of the loading GIF for tablets */
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    padding: 20px; /* Add some padding around the image */
 }
 }
 
-/* For screens smaller than 480px (e.g., small phones) */
+/* For screens smaller than 480px (phones) */
 @media (max-width: 480px) {
 button {
-  font-size: 12px; /* Further reduce button font size */
-  padding: 6px 12px; /* Smaller padding for compact buttons */
+    font-size: 12px;
+    padding: 6px 12px;
 }
 
 #logo {
-  width: 60px; /* Further reduce the size of the logo */
-  bottom: 5px; /* Position closer to the bottom */
-  left: 5px; /* Position closer to the left */
+    width: 60px;
+    bottom: 5px;
+    left: 5px;
 }
 
 #loading-overlay img {
-  width: 100px; /* Further reduce the size of the loading GIF for small phones */
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    padding: 10px; /* Smaller padding for phones */
+}
+}
+
+/* For very small screens */
+@media (max-width: 320px) {
+#loading-overlay img {
+    padding: 5px; /* Even smaller padding for very small screens */
 }
 }
